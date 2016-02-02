@@ -1,0 +1,29 @@
+.linea-horizontal { background-color: #B40431;}
+
+.logoptms {height: 96px;}
+
+/* Escritorio */
+@media (min-width: 1200px) {
+	.linea-horizontal {height: 10px;}
+	.logoptms {height: 96px;}
+}
+/* Escritorio medianos*/
+@media (min-width: 1024px) and (max-width: 1200px) {
+	.linea-horizontal {height: 8px;}
+	.logoptms {height: 76px;}
+}
+/* Escritorio pequeño */
+@media (min-width: 992px) and (max-width: 1024px) {
+	.linea-horizontal {height: 6px;}
+	.logoptms {height: 76px;}
+}
+/* Tablet o Smarphone */
+@media (min-width: 768px) and (max-width: 991px) {
+	.linea-horizontal {height: 5px;}
+	.logoptms {height: 106px;}
+}
+/* Smarphone */
+@media (max-width: 767px) {
+	.linea-horizontal {height: 3px;}
+	.logoptms {height: 76px;}
+}
