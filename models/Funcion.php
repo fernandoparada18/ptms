@@ -35,7 +35,7 @@
     }
 
     public function edit(){
-      $sql = "UPDATE FROM funciones SET funcion = '{$this->funcion}' WHERE idFuncion = '{$this->idFuncion}'";
+      $sql = "UPDATE funciones SET funcion = '{$this->funcion}' WHERE idFuncion = '{$this->idFuncion}'";
       $this->con->consultaSimple($sql);
     }
 

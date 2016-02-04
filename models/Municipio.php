@@ -35,7 +35,7 @@
     }
 
     public function edit(){
-      $sql = "UPDATE FROM municipios SET municipio = '{$this->municipio}' WHERE idMunicipio = '{$this->idMunicipio}'";
+      $sql = "UPDATE municipios SET municipio = '{$this->municipio}' WHERE idMunicipio = '{$this->idMunicipio}'";
       $this->con->consultaSimple($sql);
     }
 

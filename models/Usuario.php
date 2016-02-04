@@ -38,7 +38,7 @@
     }
 
     public function edit(){
-      $sql = "UPDATE FROM usuarios SET password = 'MD5({$this->password})' WHERE idUsuario = '{$this->idUsuario}'";
+      $sql = "UPDATE usuarios SET password = 'MD5({$this->password})' WHERE idUsuario = '{$this->idUsuario}'";
       $this->con->consultaSimple($sql);
     }
 

@@ -44,7 +44,7 @@
     }
 
     public function edit(){
-      $sql = "UPDATE FROM plantel SET nombrePlantel = '{$this->nombrePlantel}', direccion = '{$this->direccion}',
+      $sql = "UPDATE plantel SET nombrePlantel = '{$this->nombrePlantel}', direccion = '{$this->direccion}',
               telefono = '{$this->telefono}', correo = '{$this->correo}', '{$this->cedulaDirector}' WHERE idPlantel = '{$this->idPlantel}'";
       $this->con->consultaSimple($sql);
     }

@@ -37,7 +37,7 @@
     }
 
     public function edit(){
-      $sql = "UPDATE FROM mantenimiento SET fecha = '{$this->fecha}', detalle = '{$this->detalle}' WHERE id = '{$this->id}'";
+      $sql = "UPDATE mantenimiento SET fecha = '{$this->fecha}', detalle = '{$this->detalle}' WHERE id = '{$this->id}'";
       $this->con->consultaSimple($sql);
     }
 
