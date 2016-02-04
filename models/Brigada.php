@@ -29,7 +29,7 @@
     }
 
     public function add(){
-      $sql = "INSERT INTO brigadas(idBrigradista, idPtms, nombreBrigadista, apellidosBrigadista, telefono, idFuncion)
+      $sql = "INSERT INTO brigadas(id, idPtms, nombreBrigadista, apellidosBrigadista, telefono, idFuncion)
               VALUES (null,'{$this->idPtms}','{$this->nombreBrigadista}','{$this->apellidosBrigadista}',
               '{$this->telefono}','{$this->idFuncion}')";
       $this->con->consultaSimple($sql);

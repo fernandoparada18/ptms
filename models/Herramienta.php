@@ -2,6 +2,8 @@
 
   class Herramienta{
 
+    private $idHerramienta;
+    private $descripcion;
     private $con;
 
     public function __construct(){
@@ -17,28 +19,28 @@
     }
 
     public function listar(){
-      $sql = "";
+      $sql = "SELECT * FROM herramientas";
       $datos = $this->con->consultaRetorno($sql);
       return $datos;
     }
 
     public function add(){
-      $sql = "";
+      $sql = "INSERT INTO herramientas(idHerramienta, descripcion) VALUES (null,'{$this->descripcion}')";
       $this->con->consultaSimple($sql);
     }
 
     public function delete(){
-      $sql = "";
+      $sql = "DELETE herramientas WHERE idHerramienta = '{$this->idHerramienta}'";
       $this->con->consultaSimple($sql);
     }
 
     public function edit(){
-      $sql = "";
+      $sql = "UPDATE FROM herramientas SET descripcion = '{$this->descripcion}' WHERE idHerramienta = '{$this->idHerramienta}'";
       $this->con->consultaSimple($sql);
     }
 
     public function view(){
-      $sql = "";
+      $sql = "SELECT * FROM herramientas WHERE idHerramienta = '{$this->idHerramienta}'";
       $datos = $this->con->consultaRetorno($sql);
       $row = mysqli_fetch_assoc($datos);
       return $row;

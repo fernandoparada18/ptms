@@ -2,6 +2,8 @@
 
   class Funcion{
 
+    private $idFuncion;
+    private $funcion;
     private $con;
 
     public function __construct(){
@@ -17,28 +19,28 @@
     }
 
     public function listar(){
-      $sql = "";
+      $sql = "SELECT * FROM funciones";
       $datos = $this->con->consultaRetorno($sql);
       return $datos;
     }
 
     public function add(){
-      $sql = "";
+      $sql = "INSERT INTO funciones(idFuncion, funcion) VALUES (null,'{$this->funcion}')";
       $this->con->consultaSimple($sql);
     }
 
     public function delete(){
-      $sql = "";
+      $sql = "DELETE funciones WHERE idFuncion = '{$this->idFuncion}'";
       $this->con->consultaSimple($sql);
     }
 
     public function edit(){
-      $sql = "";
+      $sql = "UPDATE FROM funciones SET funcion = '{$this->funcion}' WHERE idFuncion = '{$this->idFuncion}'";
       $this->con->consultaSimple($sql);
     }
 
     public function view(){
-      $sql = "";
+      $sql = "SELECT * FROM funciones WHERE idFuncion = '{$this->idFuncion}'";
       $datos = $this->con->consultaRetorno($sql);
       $row = mysqli_fetch_assoc($datos);
       return $row;
