@@ -5,5 +5,6 @@
 
   require_once "config/Autoload.php";
   config\Autoload::run();
+  require_once "views/template.php";
   config\Enrutador::run(new config\Request());
 ?>
