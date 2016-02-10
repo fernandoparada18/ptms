@@ -21,7 +21,7 @@
     }
 
     public function listar(){
-      $sql = "SELECT * FROM usuarios";
+      $sql = "SELECT t1.idUsuario, t1.user, t2.tipo as tipo_usuario FROM usuarios t1 INNER JOIN privilegios t2 ON t1.idPrivilegio = t2.idPrivilegio";
       $datos = $this->con->consultaRetorno($sql);
       return $datos;
     }
