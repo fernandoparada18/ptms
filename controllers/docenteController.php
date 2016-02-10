@@ -1,13 +1,18 @@
 <?php namespace controllers;
 
+  use models\Docente as Docente;
+
   class docenteController{
 
-    public function index(){
-      
+    private $docente;
+
+    public function __construct(){
+      $this->docente = new Docente();
     }
 
-    public function ver($num){
-      print "Eres el numero: " . $num;
+    public function index(){
+      $datos = $this->docente->listar();
+      return $datos;
     }
   }
 ?>
