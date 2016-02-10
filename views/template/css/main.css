@@ -1,5 +1,19 @@
 body { padding: 1em 0em 0em 0em;}
 
+footer{
+  background-color: #eee;
+  border-top: 10px solid #bbb;
+  font-size: 14px;
+  padding: 20px;
+  text-align: center;
+}
+
+.box-principal{
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
 .text-big {
     font-size: 300px;
     line-height: 320px;
