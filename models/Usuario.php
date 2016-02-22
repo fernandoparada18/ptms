@@ -26,6 +26,12 @@
       return $datos;
     }
 
+    public function noAsignado(){
+      $sql = "SELECT t1.idUsuario, t1.user FROM usuarios t1 INNER JOIN docentes t2 WHERE t1.idUsuario != t2.idUsuario AND t1.idUsuario !=1";
+      $datos = $this->con->consultaRetorno($sql);
+      return $datos;
+    }
+
     public function add(){
       $sql = "INSERT INTO usuarios(idUsuario, user, password, idPrivilegio)
               VALUES (null, '{$this->user}','MD5({$this->nombres})','{$this->idPrivilegio}'";
