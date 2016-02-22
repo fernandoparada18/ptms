@@ -1,8 +1,8 @@
 <div class="box-segundario">
-	<h3 class="text-center">Agregar Parroquia<hr></h3>
+	<h3 class="text-center">Agregar Municipio Escolar<hr></h3>
 	<div class="panel panel-success">
 		<div class="panel-heading">
-			<he class="panel-title">Agregar una nueva parroquia</he>
+			<he class="panel-title">Agregar nuevo municipio escolar</he>
 		</div>
 		<div class="panel-body">
 			<div class="row">
@@ -14,6 +14,14 @@
 							<select name="idMunicipio" class="form-control">
 								<?php while($row = mysqli_fetch_array($datos)){ ?>
 										<option value="<?php echo $row['idMunicipio']; ?>"><?php echo $row['municipio']; ?></option>
+								<?php } ?>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="inputidMunicipio" class="control-label">Parroquia</label>
+							<select name="idParroquia" class="form-control">
+								<?php while($row = mysqli_fetch_array($datos)){ ?>
+										<option value="<?php echo $row['id']; ?>"><?php echo $row['nombre']; ?></option>
 								<?php } ?>
 							</select>
 						</div>

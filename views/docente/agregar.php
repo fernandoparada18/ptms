@@ -35,6 +35,7 @@
 								<?php while($row = mysqli_fetch_array($datos)){ ?>
 										<option value="<?php echo $row['idUsuario']; ?>"><?php echo $row['user']; ?></option>
 								<?php } ?>
+										<option value="3">inactivo</option>
 							</select>
 						</div>
 						<div class="form-group">

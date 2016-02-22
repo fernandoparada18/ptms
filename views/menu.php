@@ -18,12 +18,15 @@
              <li><a href="<?php echo URL; ?>plantel/agregar">Planteles</a></li>
              <li><a href="<?php echo URL; ?>usuario/agregar">Usuarios</a></li>
              <li class="divider"></li>
+             <li><a href="<?php echo URL; ?>origenagua/agregar">Origen Agua</a></li>
+             <li><a href="<?php echo URL; ?>frecuenciagua/agregar">Frecuencia Agua</a></li>
              <li><a href="<?php echo URL; ?>cargo/agregar">Cargos</a></li>
              <li><a href="<?php echo URL; ?>rubro/agregar">Rubros</a></li>
              <li><a href="<?php echo URL; ?>herramienta/agregar">Herramientas</a></li>
              <li><a href="<?php echo URL; ?>institucion/agregar">Instituciones</a></li>
              <li><a href="<?php echo URL; ?>municipio/agregar">Municipios</a></li>
              <li><a href="<?php echo URL; ?>parroquia/agregar">Parroquias</a></li>
+             <li><a href="<?php echo URL; ?>municipioescolar/agregar">Municipio Escolar</a></li>
            </ul>
          </li>
          <li class="dropdown">
@@ -32,12 +35,15 @@
              <li><a href="<?php echo URL; ?>docente">Docentes</a></li>
              <li><a href="<?php echo URL; ?>plantel">Planteles</a></li>
              <li><a href="<?php echo URL; ?>usuario">Usuarios</a></li>
+             <li><a href="<?php echo URL; ?>origenagua">Origen Agua</a></li>
+             <li><a href="<?php echo URL; ?>frecuenciagua">Frecuencia Agua</a></li>
              <li><a href="<?php echo URL; ?>cargo">Cargos</a></li>
              <li><a href="<?php echo URL; ?>rubro">Rubros</a></li>
              <li><a href="<?php echo URL; ?>herramienta">Herramientas</a></li>
              <li><a href="<?php echo URL; ?>institucion">Instituciones</a></li>
              <li><a href="<?php echo URL; ?>municipio">Municipios</a></li>
              <li><a href="<?php echo URL; ?>parroquia">Parroquias</a></li>
+             <li><a href="<?php echo URL; ?>municipioescolar">Municipio Escolar</a></li>
            </ul>
          </li>
          <li class="dropdown">
@@ -47,12 +53,6 @@
              <li><a href="<?php echo URL; ?>brigada">Brigada</a></li>
              <li><a href="<?php echo URL; ?>mantenimiento">Mantenimiento</a></li>
            </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Reportes <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Ficha Productiva</a></li>
-          </ul>
         </li>
        </ul>
        <ul class="nav navbar-nav navbar-right">
