@@ -14,5 +14,13 @@
       $datos = $this->herramienta->listar();
       return $datos;
     }
+
+    public function agregar(){
+      if($_POST){
+        $this->herramienta->set("descripcion", $_POST['descripcion']);
+        $this->herramienta->add();
+        header('Location: ' . URL . 'herramienta');
+      }
+    }
   }
 ?>

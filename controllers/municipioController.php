@@ -14,5 +14,13 @@
       $datos = $this->municipio->listar();
       return $datos;
     }
+
+    public function agregar(){
+      if($_POST){
+        $this->municipio->set("municipio", $_POST['nombre']);
+        $this->municipio->add();
+        header('Location: ' . URL . 'municipio');
+      }
+    }
   }
 ?>

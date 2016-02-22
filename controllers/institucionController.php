@@ -14,5 +14,13 @@
       $datos = $this->institucion->listar();
       return $datos;
     }
+
+    public function agregar(){
+      if($_POST){
+        $this->institucion->set("descripcion", $_POST['descripcion']);
+        $this->institucion->add();
+        header('Location: ' . URL . 'institucion');
+      }
+    }
   }
 ?>
