@@ -26,8 +26,14 @@
       return $datos;
     }
 
+    public function listarPrivilegios(){
+      $sql = "SELECT idPrivilegio, tipo FROM privilegios";
+      $datos = $this->con->consultaRetorno($sql);
+      return $datos;
+    }
+
     public function noAsignado(){
-      $sql = "SELECT t1.idUsuario, t1.user FROM usuarios t1 INNER JOIN docentes t2 WHERE t1.idUsuario != t2.idUsuario AND t1.idUsuario !=1";
+      $sql = "SELECT t1.idUsuario, t1.user FROM usuarios t1 WHERE NOT EXISTS (SELECT t2.idUsuario FROM docentes t2 WHERE t1.idUsuario = t2.idUsuario) and t1.idUsuario != 1";
       $datos = $this->con->consultaRetorno($sql);
       return $datos;
     }
