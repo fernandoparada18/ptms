@@ -4,7 +4,7 @@ footer{
   background-color: #eee;
   border-top: 10px solid #bbb;
   font-size: 14px;
-  padding: 20px;
+  padding: 14px;
   text-align: center;
 }
 
@@ -14,9 +14,22 @@ footer{
   width: 90%;
 }
 
+.box-segundario{
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+
 .text-big {
     font-size: 300px;
     line-height: 320px;
 }
 
+.text-capitalize {text-transform: capitalize;}
+
 .centrar { padding: 0.8em 0.8em 0.8em 0.8em;}
+
+/* Smarphone */
+@media (max-width: 767px) {
+	.box-segundario{ width: 80%;}
+}
