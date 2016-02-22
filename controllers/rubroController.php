@@ -22,5 +22,24 @@
         header('Location: ' . URL . 'rubro');
       }
     }
+
+    public function editar($id){
+      if($_POST){
+        $this->rubro->set("id", $_POST['id']);
+        $this->rubro->set("descripcion", $_POST['descripcion']);
+        $this->rubro->edit();
+        header('Location: '. URL . "rubro");
+      }else{
+        $this->rubro->set("id", $id);
+        $datos = $this->rubro->view();
+        return $datos;
+      }
+    }
+
+    public function eliminar($id){
+      $this->rubro->set("id", $id);
+      $this->rubro->delete();
+      header ('Location: '.URL.'rubro');
+    }
   }
 ?>

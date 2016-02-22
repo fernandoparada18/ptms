@@ -27,7 +27,7 @@
         $this->docente->set("nombres", $_POST['nombres']);
         $this->docente->set("apellidos", $_POST['apellidos']);
         $this->docente->set("telefono", $_POST['telefono']);
-        $this->docente->set("correo", $_POST['correo']);
+        $this->docente->set("correo", $_POST['email']);
         $this->docente->set("idUsuario", $_POST['idUsuario']);
         $this->docente->add();
         header("Location: " . URL . "docente");

@@ -22,5 +22,24 @@
         header('Location: ' . URL . 'herramienta');
       }
     }
+
+    public function editar($id){
+      if($_POST){
+        $this->herramienta->set("idHerramienta", $_POST['id']);
+        $this->herramienta->set("descripcion", $_POST['descripcion']);
+        $this->herramienta->edit();
+        header('Location: '. URL . "herramienta");
+      }else{
+        $this->herramienta->set("idHerramienta", $id);
+        $datos = $this->herramienta->view();
+        return $datos;
+      }
+    }
+
+    public function eliminar($id){
+      $this->herramienta->set("idHerramienta", $id);
+      $this->herramienta->delete();
+      header ('Location: '.URL.'herramienta');
+    }
   }
 ?>

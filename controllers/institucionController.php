@@ -22,5 +22,24 @@
         header('Location: ' . URL . 'institucion');
       }
     }
+
+    public function editar($id){
+      if($_POST){
+        $this->institucion->set("idInstitucion", $_POST['id']);
+        $this->institucion->set("descripcion", $_POST['descripcion']);
+        $this->institucion->edit();
+        header('Location: '. URL . "institucion");
+      }else{
+        $this->institucion->set("idInstitucion", $id);
+        $datos = $this->institucion->view();
+        return $datos;
+      }
+    }
+
+    public function eliminar($id){
+      $this->institucion->set("idInstitucion", $id);
+      $this->institucion->delete();
+      header ('Location: '.URL.'institucion');
+    }
   }
 ?>
