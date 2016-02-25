@@ -5,12 +5,56 @@
   class Template{
 
     public function __construct(){
-      include("header.php");
-      include("menu.php");
+?>
+      <!DOCTYPE html>
+      <html lang="es">
+        <head>
+          <meta charset="utf-8">
+          <title>..::PROGRAMA TODAS LAS MANOS A LA SIEMBRA::..</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>views/template/css/main.css">
+          <link rel="stylesheet" type="text/css" media="all" href="<?php echo URL; ?>views/template/css/media.css">
+          <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>views/template/css/bootstrap.css">
+          <link rel="stylesheet" href="<?php echo URL; ?>views/template/font-awesome/css/font-awesome.min.css">
+          <script type="text/javascript">
+          		$(document).ready(function(){
+          			$("#recuperar").on( "click", function() {
+          				$('#login').hide();
+          				$('.recordar').show();
+          		 	});
+          			$("#volver").on( "click", function() {
+          				$('#login').show();
+          				$('.recordar').hide();
+          		 	});
+          		});
+          </script>
+        </head>
+        <body>
+          <div class="container">
+           <div class="row">
+             <div class="col-md-4">
+               <img src="<?php echo URL; ?>views/template/img/logozec.png" width="100%"></img>
+             </div>
+             <div class="col-md-4"></div>
+             <div class="col-md-4">
+               <img class="logoptms img-rounded" src="<?php echo URL; ?>views/template/img/logoptms.jpg" width="98%"></img>
+             </div>
+           </div>
+           <hr class="linea-horizontal"></hr>
+<?php
     }
 
     public function __destruct(){
-      include("footer.php");
+?>
+          <footer class="navbar-fixed-bottom">
+            Todos los derechos reservados &copy 2016
+          </footer>
+        </div>
+        <script src="<?php echo URL; ?>views/template/js/jquery-1.11.2.min.js"></script>
+        <script src="<?php echo URL; ?>views/template/js/bootstrap.min.js"></script>
+      </body>
+      </html>
+<?php
     }
   }
 ?>

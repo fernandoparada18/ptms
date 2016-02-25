@@ -60,5 +60,19 @@
       $row = mysqli_fetch_assoc($datos);
       return $row;
     }
+
+    function validarUsuario($user, $password){
+  		$sql = "SELECT password FROM usuarios WHERE user = '$user';";
+      $datos = $this->con->consultaRetorno($sql);
+  		if($datos->num_rows > 0){
+  			$fila = $datos->fetch_assoc();
+  			if( strcmp(md5($password),$fila["password"]) == 0 )
+  				return true;
+  			else
+  				return false;
+  		}
+  		else
+  				return false;
+  	}
   }
 ?>

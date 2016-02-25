@@ -8,6 +8,10 @@ footer{
   text-align: center;
 }
 
+.recordar{
+  display:none;
+}
+
 .box-principal{
   margin-left: auto;
   margin-right: auto;
