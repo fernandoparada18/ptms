@@ -5,6 +5,7 @@
     private $idUsuario;
     private $user;
     private $password;
+    private $email;
     private $idPrivilegio;
     private $con;
 
@@ -40,7 +41,7 @@
 
     public function add(){
       $sql = "INSERT INTO usuarios(idUsuario, user, password, idPrivilegio)
-              VALUES (null, '{$this->user}','MD5({$this->nombres})','{$this->idPrivilegio}'";
+              VALUES (null, '{$this->user}',MD5('{$this->nombres}'),'{$this->idPrivilegio}'";
       $this->con->consultaSimple($sql);
     }
 
@@ -50,7 +51,7 @@
     }
 
     public function edit(){
-      $sql = "UPDATE usuarios SET password = 'MD5({$this->password})' WHERE idUsuario = '{$this->idUsuario}'";
+      $sql = "UPDATE usuarios SET password = MD5('{$this->password}') WHERE idUsuario = '{$this->idUsuario}'";
       $this->con->consultaSimple($sql);
     }
 
@@ -61,7 +62,7 @@
       return $row;
     }
 
-    function validarUsuario($user, $password){
+    public function validarUsuario($user, $password){
   		$sql = "SELECT password FROM usuarios WHERE user = '$user';";
       $datos = $this->con->consultaRetorno($sql);
   		if($datos->num_rows > 0){
@@ -74,5 +75,12 @@
   		else
   				return false;
   	}
+
+    public function validarEmail(){
+      $sql = "SELECT t1.idUsuario, CONCAT(t2.nombres, ' ', t2.apellidos) as nombre FROM usuarios t1 INNER JOIN docentes t2 WHERE t1.user = '$this->user' and t2.correo = '$this->email'";
+      $datos = $this->con->consultaRetorno($sql);
+      return $datos;
+    }
+
   }
 ?>

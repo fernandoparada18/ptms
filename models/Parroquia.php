@@ -25,6 +25,12 @@
       return $datos;
     }
 
+    public function listarXmunicipio(){
+      $sql = "SELECT id, nombre FROM parroquias WHERE idMunicipio = '{$this->idMunicipio}'";
+      $datos = $this->con->consultaRetorno($sql);
+      return $datos;
+    }
+
     public function add(){
       $sql = "INSERT INTO parroquias(id, idMunicipio, nombre) VALUES (null,'{$this->idMunicipio}','{$this->nombre}')";
       $this->con->consultaSimple($sql);
