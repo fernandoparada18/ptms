@@ -16,18 +16,7 @@
           <link rel="stylesheet" type="text/css" media="all" href="<?php echo URL; ?>views/template/css/media.css">
           <link rel="stylesheet" type="text/css" href="<?php echo URL; ?>views/template/css/bootstrap.css">
           <link rel="stylesheet" href="<?php echo URL; ?>views/template/font-awesome/css/font-awesome.min.css">
-          <script type="text/javascript">
-          		$(document).ready(function(){
-          			$("#recuperar").on( "click", function() {
-          				$('#login').hide();
-          				$('.recordar').show();
-          		 	});
-          			$("#volver").on( "click", function() {
-          				$('#login').show();
-          				$('.recordar').hide();
-          		 	});
-          		});
-          </script>
+          <script type='text/javascript' src="<?php echo URL; ?>views/template/js/jquery-1.11.2.min.js"></script>
         </head>
         <body>
           <div class="container">

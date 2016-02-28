@@ -4,6 +4,9 @@
   if( $usuario == false ) {
     // si no se ha iniciado sesión redirecciona a la pagina login.php
     require_once(ROOT . "views" . DS . "login.php");
+  }elseif($usuario != "admin"){
+    require_once(ROOT . "views" . DS . "menu.php");
+    echo "<h2 class='text-center'>Acceso denegado</h2>";
   }else{
     // Aquí va el contenido de la pagina qu se mostrara en caso de que se haya iniciado sesion
     require_once(ROOT . "views" . DS . "menu.php");

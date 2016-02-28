@@ -11,6 +11,7 @@
      </div>
      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
        <ul class="nav navbar-nav">
+       <?php if($usuario == 'admin'){ ?>
          <li class="dropdown">
            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Agregar <span class="caret"></span></a>
            <ul class="dropdown-menu" role="menu">
@@ -46,6 +47,7 @@
              <li><a href="<?php echo URL; ?>municipioescolar">Municipio Escolar</a></li>
            </ul>
          </li>
+       <?php } else {?>
          <li class="dropdown">
            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Archivos <span class="caret"></span></a>
            <ul class="dropdown-menu" role="menu">
@@ -54,9 +56,10 @@
              <li><a href="<?php echo URL; ?>mantenimiento">Mantenimiento</a></li>
            </ul>
         </li>
+       <?php } ?>
        </ul>
        <ul class="nav navbar-nav navbar-right">
-         <li><a href="#"><img src="<?php echo URL; ?>views/template/img/user.png" width="24px" height="24px" alt="user" class="img-circle"></img> Cerrar Sesión</a></li>
+         <li><a href="<?php echo URL; ?>usuario/cerrarsesion"><img src="<?php echo URL; ?>views/template/img/user.png" width="24px" height="24px" alt="user" class="img-circle"></img> <?php echo $usuario?></a></li>
        </ul>
      </div>
    </div>
