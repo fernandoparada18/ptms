@@ -15,6 +15,25 @@
       return $datos;
     }
 
+    public function agregar(){
+      if(!$_POST){
+        $datos = $this->usuario->listarPrivilegios();
+        return $datos;
+      }else{
+        $this->usuario->set("user", $_POST['user']);
+        $this->usuario->set("password", $_POST['password']);
+        $this->usuario->set("idPrivilegio", $_POST['idPrivilegio']);
+        $this->usuario->add();
+        header('Location: ' . URL . 'usuario');
+      }
+    }
+
+    public function eliminar($id){
+      $this->usuario->set("idUsuario", $id);
+      $this->usuario->delete();
+      header ('Location: '.URL.'usuario');
+    }
+
     public function recuperar(){
       if($_POST){
         $this->usuario->set("user", $_POST['user']);
@@ -31,23 +50,21 @@
         	//Titulo
         	$email_subject = "Recuperción de Acceso";
         	//Mensaje
-        	$email__message = "Estimado, " . $fila["nombre"] . " \n"
-                            ."Le informamos su nueva Contraseña es:  " . $password . "\n\n"
-                            ."Comunicamos que la dirección a través de la cual usted está"
-                            ." recibiendo el presente e-mail será utilizada únicamente para"
-                            ." el servicio de notificaciones, le agradecemos no responder este"
-                            ." correo ni utilizarlo como vía de comunicación para realizar"
-                            ." consultas personales referentes a su(s) producto(s).";
+        	$email__message = "Estimado " . strtoupper($fila["nombre"]) . ". "
+                            ."<br />Le informamos su nueva contraseña para ingresar al sistema P.T.M.S. es:  <b>" . $password . "</b> "
+                            ."<p>Comunicamos que la dirección a través de la cual usted está recibiendo el presente e-mail será utilizada"
+                            ." únicamente para el servicio de notificaciones, le agradecemos no responder este correo ni utilizarlo"
+                            ." como vía de comunicación para realizar consultas personales ni referentes a problemas tecnicos.</p>";
         	//cabecera
         	$headers = "MIME-Version: 1.0\r\n";
-        	$headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
+        	$headers .= "Content-type: text/html; charset=utf-8\r\n";
         	//dirección del remitente
         	$headers .= "From: P.T.M.S. Carabobo < ".FROM." >\r\n";
         	//Enviamos el mensaje a tu_dirección_email
         	$bool = mail($email_to,$email_subject,$email__message,$headers);
         	if($bool){
-            echo "<script>alert('En los proximos minutos recibitara un correo con su nueva contraseña!!');</script>";
-            header('Location: ' . URL);
+            echo "<script>alert('En los proximos minutos recibitara un correo con su nueva contraseña!!');</script>
+                  <meta http-equiv='REFRESH' content='0; URL=" . URL . "'>";
         	}else{
             echo "<script>alert('No se pudo enviar su nueva contraseña!!');</script>";
         	}
