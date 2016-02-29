@@ -37,7 +37,7 @@
     }
 
     public function delete(){
-      $sql = "DELETE parroquias WHERE id = '{$this->id}'";
+      $sql = "DELETE FROM parroquias WHERE id = '{$this->id}'";
       $this->con->consultaSimple($sql);
     }
 

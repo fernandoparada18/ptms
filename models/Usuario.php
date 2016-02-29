@@ -41,12 +41,12 @@
 
     public function add(){
       $sql = "INSERT INTO usuarios(idUsuario, user, password, idPrivilegio)
-              VALUES (null, '{$this->user}',MD5('{$this->nombres}'),'{$this->idPrivilegio}'";
+              VALUES (null, '{$this->user}',MD5('{$this->password}'),'{$this->idPrivilegio}')";
       $this->con->consultaSimple($sql);
     }
 
     public function delete(){
-      $sql = "DELETE usuarios WHERE idUsuario = '{$this->idUsuario}'";
+      $sql = "DELETE FROM usuarios WHERE idUsuario = '{$this->idUsuario}'";
       $this->con->consultaSimple($sql);
     }
 

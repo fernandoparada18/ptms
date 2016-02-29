@@ -30,7 +30,7 @@
     }
 
     public function delete(){
-      $sql = "DELETE municipios WHERE idMunicipio = '{$this->idMunicipio}'";
+      $sql = "DELETE FROM municipios WHERE idMunicipio = '{$this->idMunicipio}'";
       $this->con->consultaSimple($sql);
     }
 

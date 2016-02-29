@@ -30,7 +30,7 @@
     }
 
     public function delete(){
-      $sql = "DELETE instituciones WHERE idInstitucion = '{$this->idInstitucion}'";
+      $sql = "DELETE FROM instituciones WHERE idInstitucion = '{$this->idInstitucion}'";
       $this->con->consultaSimple($sql);
     }
 

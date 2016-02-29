@@ -36,7 +36,7 @@
     }
 
     public function delete(){
-      $sql = "DELETE docentes WHERE cedula = '{$this->cedula}'";
+      $sql = "DELETE FROM docentes WHERE cedula = '{$this->cedula}'";
       $this->con->consultaSimple($sql);
     }
 

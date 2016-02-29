@@ -30,7 +30,7 @@
     }
 
     public function delete(){
-      $sql = "DELETE herramientas WHERE idHerramienta = '{$this->idHerramienta}'";
+      $sql = "DELETE FROM herramientas WHERE idHerramienta = '{$this->idHerramienta}'";
       $this->con->consultaSimple($sql);
     }
 

@@ -32,7 +32,7 @@
     }
 
     public function delete(){
-      $sql = "DELETE mantenimiento WHERE id = '{$this->id}'";
+      $sql = "DELETE FROM mantenimiento WHERE id = '{$this->id}'";
       $this->con->consultaSimple($sql);
     }
 

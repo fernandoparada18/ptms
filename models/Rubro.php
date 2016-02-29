@@ -30,7 +30,7 @@
     }
 
     public function delete(){
-      $sql = "DELETE rubros WHERE id = '{$this->id}'";
+      $sql = "DELETE FROM rubros WHERE id = '{$this->id}'";
       $this->con->consultaSimple($sql);
     }
 
