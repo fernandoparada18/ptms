@@ -28,12 +28,15 @@
 						</div>
             <div class="form-group">
 							<label for="inputPassword" class="control-label">Contraseña</label>
-							<input type="text" class="form-control" name="password" required>
+							<input type="password" class="form-control" name="password" required>
 						</div>
             <div class="form-group">
 							<label for="inputidPrivilegio" class="control-label">Privilegio</label>
               <select name="idPrivilegio" class="form-control">
                 <option value="0">Seleccione un privilegio</option>
+                <?php while($row = mysqli_fetch_array($datos)){ ?>
+										<option value="<?php echo $row['idPrivilegio']; ?>"><?php echo $row['tipo']; ?></option>
+								<?php } ?>
 							</select>
 						</div>
 						<div class="form-group">
